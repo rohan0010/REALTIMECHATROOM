@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const socketio = require('socket.io')
 const http = require('http')
+const PORT = process.env.PORT||3333;
 
 const app = express();
 const server = http.createServer(app)
@@ -37,4 +38,4 @@ io.on('connection', (socket) => {
 
 })
 
-server.listen(2345, () => console.log('Website open on http://localhost:2345'))
+server.listen(PORT, () => console.log('Website open on http://localhost:2345'))
